@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>金鸡 GoldenCluck – Fresh Chicken Delivered Across Beijing</title>
+  <meta name="description" content="Farm-fresh, free-range chicken delivered to your door anywhere in Beijing in under 2 hours." />
+  <style>
+    :root {
+      --red: #c8102e;
+      --gold: #f5b700;
+      --dark: #2b1a14;
+      --cream: #fff8ec;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; color: var(--dark); background: var(--cream); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+
+    header { background: var(--red); color: #fff; position: sticky; top: 0; z-index: 10; }
+    header .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-weight: 800; font-size: 1.25rem; }
+    .logo span { color: var(--gold); }
+    nav a { margin-left: 24px; font-weight: 500; }
+    nav a:hover { color: var(--gold); }
+
+    .hero { background: linear-gradient(135deg, var(--red), #8f0a20); color: #fff; text-align: center; padding: 96px 0 88px; }
+    .hero .emoji { font-size: 4rem; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.15; margin: 16px 0; }
+    .hero p { max-width: 620px; margin: 0 auto 32px; font-size: 1.15rem; opacity: .95; }
+    .btn { display: inline-block; background: var(--gold); color: var(--dark); font-weight: 700; padding: 14px 32px; border-radius: 999px; border: 0; font-size: 1rem; cursor: pointer; transition: transform .15s; }
+    .btn:hover { transform: translateY(-2px); }
+
+    section { padding: 72px 0; }
+    h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; }
+    .grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+    .card { background: #fff; border-radius: 16px; padding: 28px; box-shadow: 0 4px 16px rgba(0,0,0,.07); text-align: center; }
+    .card .icon { font-size: 2.5rem; }
+    .card h3 { margin: 12px 0 8px; }
+    .price { color: var(--red); font-weight: 800; font-size: 1.3rem; margin-top: 8px; }
+
+    .alt { background: #fff; }
+    .steps { counter-reset: s; }
+    .steps .card::before { counter-increment: s; content: counter(s); display: grid; place-items: center; width: 40px; height: 40px; margin: 0 auto 12px; border-radius: 50%; background: var(--red); color: #fff; font-weight: 700; }
+
+    .order { background: var(--dark); color: #fff; text-align: center; }
+    .order p { margin-bottom: 24px; opacity: .85; }
+    form { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 560px; margin: 0 auto; }
+    input, select { flex: 1 1 220px; padding: 14px 16px; border-radius: 999px; border: 0; font-size: 1rem; }
+    #msg { margin-top: 16px; color: var(--gold); min-height: 1.5em; }
+
+    footer { background: #1a0f0b; color: #bbb; text-align: center; padding: 28px 0; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a class="logo" href="#top">金鸡 <span>GoldenCluck</span></a>
+      <nav>
+        <a href="#menu">Menu</a>
+        <a href="#how">How it works</a>
+        <a href="#order">Order</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="emoji">🐔</div>
+        <h1>Fresh chicken, delivered across Beijing in under 2 hours</h1>
+        <p>Free-range, hormone-free chicken from family farms in Hebei, processed daily and brought straight to your kitchen.</p>
+        <a class="btn" href="#order">Order now</a>
+      </div>
+    </section>
+
+    <section id="menu">
+      <div class="container">
+        <h2>Our Menu</h2>
+        <div class="grid">
+          <div class="card"><div class="icon">🍗</div><h3>Whole Chicken</h3><p>Plump free-range bird, ~1.5 kg. Perfect for roasting or soup.</p><div class="price">¥68</div></div>
+          <div class="card"><div class="icon">🥩</div><h3>Chicken Breast</h3><p>Lean, tender and trimmed. 500 g pack.</p><div class="price">¥32</div></div>
+          <div class="card"><div class="icon">🍖</div><h3>Drumsticks &amp; Thighs</h3><p>Juicy cuts ideal for braising and grilling. 1 kg pack.</p><div class="price">¥45</div></div>
+          <div class="card"><div class="icon">🔥</div><h3>Marinated Wings</h3><p>Ready-to-cook honey-chili wings. 600 g pack.</p><div class="price">¥38</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="alt">
+      <div class="container">
+        <h2>How It Works</h2>
+        <div class="grid steps">
+          <div class="card"><h3>Choose</h3><p>Pick your cuts and delivery slot.</p></div>
+          <div class="card"><h3>We prepare</h3><p>Cut, packed and chilled the same day.</p></div>
+          <div class="card"><h3>We deliver</h3><p>Cold-chain courier to anywhere within the 6th Ring Road.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="order" class="order">
+      <div class="container">
+        <h2>Place Your Order</h2>
+        <p>Leave your details and we'll confirm by WeChat or phone within 10 minutes.</p>
+        <form id="orderForm">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="tel" name="phone" placeholder="Phone / WeChat" required />
+          <select name="district" required>
+            <option value="">District</option>
+            <option>Chaoyang</option><option>Haidian</option><option>Dongcheng</option>
+            <option>Xicheng</option><option>Fengtai</option><option>Shijingshan</option><option>Other</option>
+          </select>
+          <button class="btn" type="submit">Request delivery</button>
+        </form>
+        <div id="msg" role="status"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 金鸡 GoldenCluck · Chaoyang District, Beijing · hello@goldencluck.example</div>
+  </footer>
+
+  <script>
+    document.getElementById('orderForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = this.name.value.trim();
+      document.getElementById('msg').textContent = 'Thanks, ' + name + '! We\'ll be in touch shortly. 谢谢!';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
