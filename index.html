@@ -5,52 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>金鸡 GoldenCluck – Fresh Chicken Delivered Across Beijing</title>
   <meta name="description" content="Farm-fresh, free-range chicken delivered to your door anywhere in Beijing in under 2 hours." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --red: #c8102e;
-      --gold: #f5b700;
-      --dark: #2b1a14;
-      --cream: #fff8ec;
+      --blood: #8b0a1a;
+      --blood-dark: #4a0510;
+      --gold: #b8963e;
+      --ink: #0b0809;
+      --panel: #16101a;
+      --panel-alt: #110c14;
+      --bone: #d9cfc0;
+      --muted: #9a8f9e;
+      --display: "Cinzel", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      --body: "EB Garamond", Garamond, Georgia, "Songti SC", "SimSun", serif;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; color: var(--dark); background: var(--cream); line-height: 1.6; }
+    body { font-family: var(--body); font-size: 1.1rem; color: var(--bone); background: var(--ink) radial-gradient(ellipse at top, #1d1022 0%, var(--ink) 60%) fixed; line-height: 1.65; }
     a { color: inherit; text-decoration: none; }
+    h1, h2, h3, .logo, .btn, .price { font-family: var(--display); letter-spacing: .06em; }
     .container { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
 
-    header { background: var(--red); color: #fff; position: sticky; top: 0; z-index: 10; }
+    header { background: #070405; color: var(--bone); position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--gold); box-shadow: 0 2px 18px rgba(139,10,26,.5); }
     header .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .logo { font-weight: 800; font-size: 1.25rem; }
-    .logo span { color: var(--gold); }
-    nav a { margin-left: 24px; font-weight: 500; }
-    nav a:hover { color: var(--gold); }
+    .logo { font-family: "Cinzel Decorative", var(--display); font-weight: 700; font-size: 1.25rem; }
+    .logo span { color: var(--blood); text-shadow: 0 0 8px rgba(139,10,26,.8); }
+    nav a { margin-left: 24px; font-family: var(--display); font-size: .9rem; text-transform: uppercase; letter-spacing: .14em; transition: color .2s, text-shadow .2s; }
+    nav a:hover { color: var(--gold); text-shadow: 0 0 8px rgba(184,150,62,.6); }
 
-    .hero { background: linear-gradient(135deg, var(--red), #8f0a20); color: #fff; text-align: center; padding: 96px 0 88px; }
-    .hero .emoji { font-size: 4rem; }
-    .hero h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.15; margin: 16px 0; }
-    .hero p { max-width: 620px; margin: 0 auto 32px; font-size: 1.15rem; opacity: .95; }
-    .btn { display: inline-block; background: var(--gold); color: var(--dark); font-weight: 700; padding: 14px 32px; border-radius: 999px; border: 0; font-size: 1rem; cursor: pointer; transition: transform .15s; }
-    .btn:hover { transform: translateY(-2px); }
+    .hero { background: radial-gradient(ellipse at center, rgba(139,10,26,.35), transparent 65%), linear-gradient(180deg, #1a0a12, var(--ink)); color: var(--bone); text-align: center; padding: 96px 0 88px; border-bottom: 1px solid var(--blood-dark); }
+    .hero .emoji { font-size: 4rem; filter: grayscale(1) contrast(1.2) drop-shadow(0 0 14px rgba(139,10,26,.9)); }
+    .hero h1 { font-family: "Cinzel Decorative", var(--display); font-size: clamp(1.8rem, 4.6vw, 3.1rem); line-height: 1.2; margin: 16px 0; color: #efe6d6; text-shadow: 0 0 24px rgba(139,10,26,.8), 0 2px 0 #000; }
+    .hero p { max-width: 620px; margin: 0 auto 32px; font-size: 1.25rem; font-style: italic; color: var(--muted); }
+    .btn { display: inline-block; background: linear-gradient(180deg, var(--blood), var(--blood-dark)); color: var(--bone); font-weight: 700; text-transform: uppercase; padding: 14px 32px; border: 1px solid var(--gold); border-radius: 2px; font-size: .95rem; cursor: pointer; transition: transform .15s, box-shadow .2s; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 0 18px rgba(139,10,26,.9); }
 
     section { padding: 72px 0; }
-    h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; }
+    h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; color: var(--gold); text-transform: uppercase; }
+    h2::after { content: "✠"; display: block; font-size: 1.1rem; color: var(--blood); margin-top: 8px; }
     .grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
-    .card { background: #fff; border-radius: 16px; padding: 28px; box-shadow: 0 4px 16px rgba(0,0,0,.07); text-align: center; }
-    .card .icon { font-size: 2.5rem; }
-    .card h3 { margin: 12px 0 8px; }
-    .price { color: var(--red); font-weight: 800; font-size: 1.3rem; margin-top: 8px; }
+    .card { background: linear-gradient(180deg, var(--panel), #0e0910); border: 1px solid #3a2a3e; border-top: 2px solid var(--blood); border-radius: 2px; padding: 28px; box-shadow: 0 6px 22px rgba(0,0,0,.6), inset 0 0 30px rgba(0,0,0,.4); text-align: center; transition: border-color .2s, box-shadow .2s; }
+    .card:hover { border-color: var(--gold); box-shadow: 0 6px 26px rgba(139,10,26,.45), inset 0 0 30px rgba(0,0,0,.4); }
+    .card .icon { font-size: 2.5rem; filter: grayscale(.7) contrast(1.1); }
+    .card h3 { margin: 12px 0 8px; color: #efe6d6; }
+    .price { color: var(--gold); font-weight: 700; font-size: 1.3rem; margin-top: 8px; }
 
-    .alt { background: #fff; }
+    .alt { background: var(--panel-alt); border-top: 1px solid var(--blood-dark); border-bottom: 1px solid var(--blood-dark); }
     .steps { counter-reset: s; }
-    .steps .card::before { counter-increment: s; content: counter(s); display: grid; place-items: center; width: 40px; height: 40px; margin: 0 auto 12px; border-radius: 50%; background: var(--red); color: #fff; font-weight: 700; }
+    .steps .card::before { counter-increment: s; content: counter(s, upper-roman); display: grid; place-items: center; width: 40px; height: 40px; margin: 0 auto 12px; border-radius: 50%; border: 1px solid var(--gold); background: var(--blood-dark); color: var(--gold); font-family: var(--display); font-weight: 700; }
 
-    .order { background: var(--dark); color: #fff; text-align: center; }
-    .order p { margin-bottom: 24px; opacity: .85; }
+    .order { background: linear-gradient(180deg, var(--ink), #1a0a12); color: var(--bone); text-align: center; }
+    .order p { margin-bottom: 24px; color: var(--muted); font-style: italic; }
     form { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 560px; margin: 0 auto; }
-    input, select { flex: 1 1 220px; padding: 14px 16px; border-radius: 999px; border: 0; font-size: 1rem; }
+    input, select { flex: 1 1 220px; padding: 14px 16px; border-radius: 2px; border: 1px solid #3a2a3e; background: #0b0809; color: var(--bone); font-family: var(--body); font-size: 1.05rem; }
+    input::placeholder { color: var(--muted); }
+    input:focus, select:focus { outline: none; border-color: var(--blood); box-shadow: 0 0 10px rgba(139,10,26,.7); }
     #msg { margin-top: 16px; color: var(--gold); min-height: 1.5em; }
 
-    footer { background: #1a0f0b; color: #bbb; text-align: center; padding: 28px 0; font-size: .9rem; }
+    footer { background: #050304; color: var(--muted); text-align: center; padding: 28px 0; font-size: .95rem; border-top: 1px solid var(--blood-dark); }
   </style>
 </head>
 <body>
